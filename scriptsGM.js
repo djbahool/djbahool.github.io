@@ -8,6 +8,9 @@ function putX() {
     if ($('.btTTT').html=='') {
         $('.btTTT').html('X');
     }
+    if ($('#start').html=='Re-Start') {
+        $('#start').html('RE-REX');
+    }
 }
 $('#start').click(startGame);
 $('.btTTT').click(putX);
