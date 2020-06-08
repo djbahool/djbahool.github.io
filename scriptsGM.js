@@ -6,7 +6,7 @@ function startGame() {
 }
 function putX() {
     if ($('.btTTT').html=='') {
-        $('.btTTT').html="X";
+        $('.btTTT').html('X');
     }
 }
 $('#start').click(startGame);
