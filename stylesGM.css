@@ -1,0 +1,22 @@
+.btTTT {
+    background-color: #4CAF50; /* Green */
+    border: solid black;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    width: 150px;
+    height: 150px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    transition-duration: 0.4s;
+  }
+
+  .btTTT:hover {
+    background-color: blue;
+    color: white;
+  }
