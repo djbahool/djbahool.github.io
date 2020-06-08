@@ -10,7 +10,7 @@ function putX() {
     }
 }
 $('#start').click(startGame);
-$('btTTT').click(putX);
+$('.btTTT').click(putX);
 
 for (let index = 0; index < array.length; index++) {
     const element = array[index];
