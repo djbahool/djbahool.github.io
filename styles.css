@@ -1,4 +1,4 @@
-.button {
+.allButtons {
     background-color: #4CAF50; /* Green */
     border: solid black;
     color: white;
@@ -16,7 +16,7 @@
     transition-duration: 0.4s;
   }
 
-  .button:hover {
+  .allButtons:hover {
     background-color: blue;
     color: white;
   }
