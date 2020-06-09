@@ -13,17 +13,20 @@ function startGame() {
     counter = 0;
     pcMoved = false;
     winner = false;
+    $('#cnt').html('Counter: '+counter);
 }
-function pc() {
+function pc() {    
+    counter++;
+    $('#cnt').html('Counter: '+counter);    
     check();
-    if ((counter===8) && (winner===false)) {
-        window.alert("Lépés 9, gémóver!");
+    if ((counter===9) && (winner===false)) {
+        setTimeout(function(){ alert("Lépés 9, gémóver!"); }, 100);
     } 
-    if ((counter<8) && (winner===false)) {
-        counter++;
+    if ((counter<10) && (winner===false)) {        
         computerTurns = true;
         pcMoved = false;
         pcTurns();
+        //setTimeout(function(){ pcTurns(); }, counter*50);        
         check();
     }
 }
@@ -39,9 +42,8 @@ function check() {
     {
         gameStarted=false;
         winner = true;
-        window.alert("Congratulation! You won the game!");
-    }   
-    
+        setTimeout(function(){ alert("Congratulation! You won the game!"); }, 100);
+    }       
     if ((($('#bt0').html()==='O') && ($('#bt1').html()==='O') && ($('#bt2').html()==='O')) ||
         (($('#bt3').html()==='O') && ($('#bt4').html()==='O') && ($('#bt5').html()==='O')) ||
         (($('#bt6').html()==='O') && ($('#bt7').html()==='O') && ($('#bt8').html()==='O')) ||
@@ -50,14 +52,11 @@ function check() {
         (($('#bt2').html()==='O') && ($('#bt5').html()==='O') && ($('#bt8').html()==='O')) ||
         (($('#bt0').html()==='O') && ($('#bt4').html()==='O') && ($('#bt8').html()==='O')) ||
         (($('#bt2').html()==='O') && ($('#bt4').html()==='O') && ($('#bt6').html()==='O')))    
-{
-    gameStarted=false;
-    winner = true;
-    window.alert("Computer won :-(");
-}
-
-
-
+    {
+        gameStarted=false;
+        winner = true;
+        setTimeout(function(){ alert("Computer won :-("); }, 100);
+    }
 }
 function putX0() {
     if ($('#bt0').html()==='.' && gameStarted && counter<9) {
@@ -175,6 +174,7 @@ function pcTurns() {
           }
         } while (pcMoved==false);
         counter++;
+        $('#cnt').html('Counter: '+counter);
     }
 }
 $('#start').click(startGame);
@@ -187,8 +187,3 @@ $('#bt5').click(putX5);
 $('#bt6').click(putX6);
 $('#bt7').click(putX7);
 $('#bt8').click(putX8);
-
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    
-}

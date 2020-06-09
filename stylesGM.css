@@ -20,3 +20,9 @@
     background-color: blue;
     color: white;
   }
+  #cnt {
+      color: orange;
+      font-style: italic;
+      display: inline;
+      font-size: large;
+  }
