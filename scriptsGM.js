@@ -5,6 +5,7 @@ let computerTurns = false;
 let counter = 0;
 let pcMoved = false;
 let winner = false;
+let btn = document.createElement("BUTTON");
 function startGame() {
     $('#start').html('Re-Start');
     $('.btTTT').html('.');
@@ -13,13 +14,16 @@ function startGame() {
     counter = 0;
     pcMoved = false;
     winner = false;
-    $('#cnt').html('Counter: '+counter);
+    $('#cnt').html('Counter: '+counter);  
+    document.body.removeChild(btn);  
 }
 function pc() {    
     counter++;
     $('#cnt').html('Counter: '+counter);    
     check();
     if ((counter===9) && (winner===false)) {
+        btn.innerHTML = "Döntetlen!";
+        document.body.appendChild(btn); 
         setTimeout(function(){ alert("Lépés 9, gémóver!"); }, 100);
     } 
     if ((counter<10) && (winner===false)) {        
@@ -42,6 +46,8 @@ function check() {
     {
         gameStarted=false;
         winner = true;
+        btn.innerHTML = "YUHÉ TE NYERTÉL";
+        document.body.appendChild(btn);        
         setTimeout(function(){ alert("Congratulation! You won the game!"); }, 100);
     }       
     if ((($('#bt0').html()==='O') && ($('#bt1').html()==='O') && ($('#bt2').html()==='O')) ||
@@ -55,6 +61,8 @@ function check() {
     {
         gameStarted=false;
         winner = true;
+        btn.innerHTML = "Oh Nein, der Computer gewinnt :-(";
+        document.body.appendChild(btn); 
         setTimeout(function(){ alert("Computer won :-("); }, 100);
     }
 }
